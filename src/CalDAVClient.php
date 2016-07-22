@@ -1271,7 +1271,7 @@ EOFILTER;
   
 	public function printLastMessages() {
 		$string = '';
-		$dom = new DOMDocument();
+		$dom = new \DOMDocument();
 		$dom->preserveWhiteSpace = FALSE;
 		$dom->formatOutput = TRUE;
 		
