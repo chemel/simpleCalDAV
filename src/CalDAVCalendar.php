@@ -27,7 +27,7 @@
  *
  */
 
-namespace SimpleCalDAVClient;
+namespace SimpleCalDAV;
 
 class CalDAVCalendar {
 	private $url;

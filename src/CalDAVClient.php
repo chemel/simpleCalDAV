@@ -10,10 +10,10 @@
  * @package simpleCalDAV
  */
 
-namespace SimpleCalDAVClient;
+namespace SimpleCalDAV;
 
-use SimpleCalDAVClient\includes\XMLDocument;
-use SimpleCalDAVClient\includes\XMLElement;
+use SimpleCalDAV\includes\XMLDocument;
+use SimpleCalDAV\includes\XMLElement;
 
 
 

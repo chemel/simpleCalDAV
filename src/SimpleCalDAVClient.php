@@ -1,7 +1,7 @@
 <?php
 
 /**
- * SimpleCalDAVClient
+ * SimpleCalDAV
  *
  * Copyright 2014 Michael Palm <palm.michael@gmx.de>
  *
@@ -40,10 +40,10 @@
  * @package simpleCalDAV
  */
 
-namespace SimpleCalDAVClient;
+namespace SimpleCalDAV;
 
-use SimpleCalDAVClient\CalDAVClient;
-use SimpleCalDAVClient\CalDAVObject;
+use SimpleCalDAV\CalDAVClient;
+use SimpleCalDAV\CalDAVObject;
 
 class SimpleCalDAVClient {
 

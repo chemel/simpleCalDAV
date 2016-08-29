@@ -21,7 +21,7 @@
  *
  */
 
-namespace SimpleCalDAVClient;
+namespace SimpleCalDAV;
 
 class CalDAVObject {
 	private $href;

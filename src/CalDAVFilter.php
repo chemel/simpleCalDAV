@@ -22,7 +22,7 @@
  *
  */
 
-namespace SimpleCalDAVClient;
+namespace SimpleCalDAV;
 
 class CalDAVFilter {
 	private $resourceType;
