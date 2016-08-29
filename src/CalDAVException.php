@@ -6,13 +6,13 @@
  * 
  * This class is an extension to the Exception-class, to store and report additional data in the case
  * of a problem.
- * For debugging purposes, just sorround all of your SimpleCalDAVClient-Code with try { ... } catch (Exception $e) { echo $e->__toString(); }
+ * For debugging purposes, just sorround all of your SimpleCalDAV-Code with try { ... } catch (Exception $e) { echo $e->__toString(); }
  * 
  * @package simpleCalDAV
  *
  */
 
-namespace SimpleCalDAVClient;
+namespace SimpleCalDAV;
 
 class CalDAVException extends \Exception {
 	private $requestHeader;

@@ -9,7 +9,7 @@
 * @license   http://www.gnu.org/licenses/lgpl-3.0.txt  GNU LGPL version 3 or later
 */
 
-namespace SimpleCalDAVClient\includes;
+namespace SimpleCalDAV\includes;
 
 require_once(__DIR__.'/AWLUtilities.php');
 

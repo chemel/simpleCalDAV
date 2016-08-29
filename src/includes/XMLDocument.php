@@ -10,7 +10,7 @@
 *
 */
 
-namespace SimpleCalDAVClient\includes;
+namespace SimpleCalDAV\includes;
 
 
 /**
