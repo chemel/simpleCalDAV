@@ -10,7 +10,7 @@
 *
 */
 
-namespace it\thecsea\simple_caldav_client\includes;
+namespace SimpleCalDAVClient\includes;
 
 
 /**
@@ -25,19 +25,19 @@ class XMLDocument {
   */
   /**
   * holds the namespaces which this document has been configured for.
-  * @var namespaces
+  * @var array
   */
   private $namespaces;
 
   /**
   * holds the prefixes which are shorthand for the namespaces.
-  * @var prefixes
+  * @var array
   */
   private $prefixes;
 
   /**
   * Holds the root document for the tree
-  * @var root
+  * @var string
   */
   private $root;
 

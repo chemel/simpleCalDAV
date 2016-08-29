@@ -21,7 +21,7 @@
  *
  */
 
-namespace it\thecsea\simple_caldav_client;
+namespace SimpleCalDAVClient;
 
 class CalDAVObject {
 	private $href;
@@ -49,5 +49,3 @@ class CalDAVObject {
 		return $this->etag;
 	}
 }
-
-?>

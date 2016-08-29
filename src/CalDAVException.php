@@ -12,15 +12,22 @@
  *
  */
 
-namespace it\thecsea\simple_caldav_client;
+namespace SimpleCalDAVClient;
 
 class CalDAVException extends \Exception {
 	private $requestHeader;
 	private $requestBody;
 	private $responseHeader;
 	private $responseBody;
-	
-	public function __construct($message, $client, $code = 0, Exception $previous = null) {
+
+    /**
+     * CalDAVException constructor.
+     * @param string $message
+     * @param CalDAVClient $client
+     * @param int $code
+     * @param \Exception|null $previous
+     */
+	public function __construct($message, $client, $code = 0, \Exception $previous = null) {
     	parent::__construct($message, $code, $previous);
     	
     	$this->requestHeader = $client->GetHttpRequest();

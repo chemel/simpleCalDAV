@@ -27,7 +27,7 @@
  *
  */
 
-namespace it\thecsea\simple_caldav_client;
+namespace SimpleCalDAVClient;
 
 class CalDAVCalendar {
 	private $url;

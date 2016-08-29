@@ -10,10 +10,10 @@
  * @package simpleCalDAV
  */
 
-namespace it\thecsea\simple_caldav_client;
+namespace SimpleCalDAVClient;
 
-use it\thecsea\simple_caldav_client\includes\XMLDocument;
-use it\thecsea\simple_caldav_client\includes\XMLElement;
+use SimpleCalDAVClient\includes\XMLDocument;
+use SimpleCalDAVClient\includes\XMLElement;
 
 
 
@@ -830,9 +830,12 @@ class CalDAVClient {
   }
 
 
-  /**
-   * Get a bunch of events for a calendar with a calendar-multiget report
-   */
+    /**
+     * Get a bunch of events for a calendar with a calendar-multiget report
+     * @param array $event_hrefs
+     * @param null|string $url
+     * @return array
+     */
   function CalendarMultiget( $event_hrefs, $url = null ) {
 
       if ( isset($url) ) $this->SetCalendar($url);
@@ -919,7 +922,7 @@ EOXML;
                   if ( $v['type'] == 'open' ) {
                       $response = array();
                   }
-                  elseif ( $v['type'] == 'close' ) {
+                  elseif ( $v['type'] == 'close' && isset($response)) {
                       $report[] = $response;
                   }
                   break;

@@ -22,7 +22,7 @@
  *
  */
 
-namespace it\thecsea\simple_caldav_client;
+namespace SimpleCalDAVClient;
 
 class CalDAVFilter {
 	private $resourceType;
