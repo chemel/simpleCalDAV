@@ -342,24 +342,26 @@ class SimpleCalDAVClient {
      */
 	function getChangedEvents ( $start = null, $end = null, $existing = array() )
 	{
-		// Connection and calendar set?
-		if(!isset($this->client)) throw new \Exception('No connection. Try connect().');
-		if(!isset($this->client->calendar_url)) throw new \Exception('No calendar selected. Try findCalendars() and setCalendar().');
+        // Connection and calendar set?
+        if(!isset($this->client)) throw new \Exception('No connection. Try connect().');
+        if(!isset($this->client->calendar_url)) throw new \Exception('No calendar selected. Try findCalendars() and setCalendar().');
 
-		// Are $start and $end in the correct format?
-		if ( ( isset($start) and ! preg_match( '#^\d\d\d\d\d\d\d\dT\d\d\d\d\d\dZ$#', $start, $matches ) )
-		  or ( isset($end) and ! preg_match( '#^\d\d\d\d\d\d\d\dT\d\d\d\d\d\dZ$#', $end, $matches ) ) )
-		{ trigger_error('$start or $end are in the wrong format. They must have the format yyyymmddThhmmssZ and should be in GMT', E_USER_ERROR); }
+        // Are $start and $end in the correct format?
+        if ( ( isset($start) and ! preg_match( '#^\d\d\d\d\d\d\d\dT\d\d\d\d\d\dZ$#', $start, $matches ) )
+            or ( isset($end) and ! preg_match( '#^\d\d\d\d\d\d\d\dT\d\d\d\d\d\dZ$#', $end, $matches ) ) )
+        { trigger_error('$start or $end are in the wrong format. They must have the format yyyymmddThhmmssZ and should be in GMT', E_USER_ERROR); }
 
-		$report = array();
+        $report = array();
         $new_events = array();
 
         // 1. get all e-tags in calendar
-		$eTags = $this->client->GetCollectionETags();
+        $eTags = $this->client->GetCollectionETags();
 
         // 2. compare data
-        if (count($existing) && count($eTags)) {
+        if (count($eTags)) {
             foreach ($eTags as $href => $eTag) {
+                $eTag = str_ireplace('"','',trim($eTag));
+
                 // 2.1. etag in both -> no changes
                 if (isset($existing[$href]) && $existing[$href]['etag'] == $eTag) {
                     unset($existing[$href]);
@@ -381,9 +383,9 @@ class SimpleCalDAVClient {
             $report['delete'] = $existing;
         }
 
-        // 3. get new_events from calandar by href
+        // 3. get new_events from calendar by href
         if (count($new_events)) {
-		    $results = $this->client->CalendarMultiget($new_events);
+            $results = $this->client->CalendarMultiget($new_events);
 
             // GET-request successfull?
             if ( $this->client->GetHttpResultCode() != '207' )
@@ -397,7 +399,7 @@ class SimpleCalDAVClient {
             }
         }
 
-		return $report;
+        return $report;
 	}
 
 	/**
