@@ -1,5 +1,5 @@
 {
-  "name": "mr4online/simple-caldav-client",
+  "name": "alc/simple-caldav-client",
   "type": "library",
   "keywords": ["caldav","client", "simple"],
   "description": "A simple and complete php caldav client",
